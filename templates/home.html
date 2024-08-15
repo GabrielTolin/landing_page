@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro para clientes SantiClinic</title>
+    <!--Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/simplex/bootstrap.min.css" integrity="sha384-FYrl2Nk72fpV6+l3Bymt1zZhnQFK75ipDqPXK0sOR0f/zeOSZ45/tKlsKucQyjSp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!--Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/simplex/bootstrap.min.css" integrity="sha384-FYrl2Nk72fpV6+l3Bymt1zZhnQFK75ipDqPXK0sOR0f/zeOSZ45/tKlsKucQyjSp" crossorigin="anonymous"></head>
+<body>
+    <main class="container p-4">
+      <h1 class="display-4 text-center mt-4 titulo">Formulário de Cadastro</h1> <br><br><br>
+        <div class="row">
+            <div class="col-md-4 offset-md-4 my-auto">
+                <div class="card">
+                    <div class="card-header">
+                        <form action="/add_user" method="post">
+                            <div class="form-group">
+                                <input type="text" id="nome" name="nome" placeholder="Nome" class="form-control" autofocus> <br>
+                                <input type="text" id="email"  name="email" placeholder="Email" class="form-control"> <br>
+                                <input type="text" id="telefone" name="telefone" placeholder="Telefone" class="form-control"> <br>
+                                <input type="text" id="endereco" name="endereco" placeholder="Endereço" class="form-control"> <br>
+                                <input type="text" id="conhecimento" name="conhecimento" placeholder="Como conheceu nossa empresa?" class="form-control">
+
+
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+
+                                Guardar
+                            </button>
+
+                        </form>
+                    </div>
+                    <form action="{{ url_for('exportar_dados') }}" method="get">
+                            <button type="submit" class="btn btn-secondary btn-block">Exportar dados para o Excel</button>
+                            </form>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+</body>
+</html>
